@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% set page_title = "Chat — frAInk" %}
+
+{% block content %}
+<div class="chat-layout">
+
+  <!-- Chat header -->
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <span class="chat-status-dot"></span>
+      <span class="chat-title">frAInk</span>
+      <span class="chat-subtitle">Option A — reasoning layer · not the pipeline executor</span>
+    </div>
+    <a href="/admin" class="btn btn-outline" style="font-size: 0.8rem; padding: 6px 14px;">← Dashboard</a>
+  </div>
+
+  <!-- Messages area -->
+  <div class="chat-messages" id="chatMessages">
+    <!-- Greeting -->
+    <div class="msg msg-fraink" id="greeting">
+      <div class="msg-content">
+        <p>Alright, I'm here.</p>
+        <p>Ask me anything — strategy, experiment ideas, how the pipeline works, where to go next. This is the reasoning layer. Think of it as talking to yourself, but the version of you that has slightly more analytical distance.</p>
+        <p>For actual pipeline runs, you know the drill — terminal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input area -->
+  <div class="chat-input-area">
+    <div class="chat-input-wrapper">
+      <textarea
+        id="chatInput"
+        class="chat-input"
+        placeholder="Ask frAInk anything..."
+        rows="1"
+        autofocus
+      ></textarea>
+      <button id="sendBtn" class="chat-send-btn" aria-label="Send">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M14 8L2 2l2.5 6L2 14l12-6z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <p class="chat-hint">Enter to send · Shift+Enter for new line</p>
+  </div>
+
+</div>
+
+<script src="/static/chat.js"></script>
+{% endblock %}

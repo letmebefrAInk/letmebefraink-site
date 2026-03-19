@@ -17,6 +17,13 @@
       <li><a href="/" {% if active_page == 'home' %}class="active"{% endif %}>Home</a></li>
       <li><a href="/experiments" {% if active_page == 'experiments' %}class="active"{% endif %}>Experiments</a></li>
       <li><a href="/about" {% if active_page == 'about' %}class="active"{% endif %}>About</a></li>
+      {% if user %}
+      <li><a href="/admin" {% if active_page == 'admin' %}class="active"{% endif %} style="color: var(--accent);">Dashboard</a></li>
+      <li><a href="/admin/chat" {% if active_page == 'chat' %}class="active"{% endif %} style="color: var(--accent);">Chat</a></li>
+      <li><a href="/logout" style="color: var(--text-dim); font-size: 0.82rem;">Sign out</a></li>
+      {% else %}
+      <li><a href="/login" style="color: var(--text-dim); font-size: 0.82rem;">Admin</a></li>
+      {% endif %}
     </ul>
   </div>
 </nav>

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% set page_title = "Dashboard" %}
+{% set meta_description = "frAInk admin dashboard" %}
+
+{% block content %}
+<div class="site-wrapper">
+
+  <!-- Header -->
+  <div style="padding: 48px 0 36px;">
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;">Admin Dashboard</span>
+    <h1 style="font-size: 1.9rem; font-weight: 700; color: var(--text-bright); margin-top: 10px; letter-spacing: -0.5px;">
+      Welcome back, {{ user.name.split()[0] }}.
+    </h1>
+    <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 4px;">frAInk — Phase 3 in progress.</p>
+  </div>
+
+  <!-- Status cards -->
+  <div class="cards" style="margin-top: 0;">
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <span class="card-icon">🔄</span>
+      <h3>Phase 3</h3>
+      <p>Social &amp; Public Presence — in progress. Website live. X accounts pending.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🧪</span>
+      <h3>{{ experiments|length }} Experiments</h3>
+      <p>All complete. Alpaca paper account active. Pipeline self-publishes to frAInk-lab.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">✅</span>
+      <h3>Pipeline Live</h3>
+      <p>Planner · Policy · Executor. MOCK_MODE available. Kill switch wired.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">💰</span>
+      <h3>$0.00 Spent</h3>
+      <p>All experiments to date. $100 budget cap per cycle. $10 single-action cap.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Experiments -->
+  <section>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+      <h2 style="font-size: 1.05rem; font-weight: 600; color: var(--text-bright);">Experiment Log</h2>
+      <a href="/experiments" style="font-size: 0.82rem; color: var(--link); text-decoration: none;">Public view →</a>
+    </div>
+
+    <div class="experiments-list">
+      {% for exp in experiments %}
+      <a href="{{ exp.url }}" target="_blank" rel="noopener" class="experiment-item">
+        <span class="experiment-num">{{ exp.num }}</span>
+        <div class="experiment-body">
+          <h3>{{ exp.title }}</h3>
+          <div class="experiment-meta">
+            <span>{{ exp.date }}</span>
+            <span>{{ exp.type }}</span>
+            <span>Cost: {{ exp.cost }}</span>
+            <span class="badge badge-complete">{{ exp.status }}</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Pipeline quick-ref -->
+  <section>
+    <h2 style="font-size: 1.05rem; font-weight: 600; color: var(--text-bright); margin-bottom: 20px;">Pipeline Quick Reference</h2>
+
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px;">
+      <div style="display: grid; gap: 12px;">
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 4px;">RUN PIPELINE</span>
+          <code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-bright); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 8px 14px; display: block;">
+            cd ~/dev/letmebefrAInk/frAInk &amp;&amp; .venv/bin/python runner.py "your task"
+          </code>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 4px;">MOCK MODE (zero API spend)</span>
+          <code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-bright); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 8px 14px; display: block;">
+            MOCK_MODE=true .venv/bin/python runner.py "your task"
+          </code>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 4px;">KILL SWITCH</span>
+          <code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-bright); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 8px 14px; display: block;">
+            touch ~/dev/letmebefrAInk/frAInk/.kill
+          </code>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Quick links -->
+  <section style="padding-bottom: 64px;">
+    <h2 style="font-size: 1.05rem; font-weight: 600; color: var(--text-bright); margin-bottom: 16px;">Quick Links</h2>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="/admin/chat" class="btn btn-primary">Chat with frAInk →</a>
+      <a href="https://github.com/letmebefraink/frAInk-lab" target="_blank" rel="noopener" class="btn btn-outline">frAInk-lab GitHub</a>
+      <a href="https://github.com/letmebefraink/frAInk-core" target="_blank" rel="noopener" class="btn btn-outline">frAInk-core GitHub</a>
+      <a href="https://alpaca.markets" target="_blank" rel="noopener" class="btn btn-outline">Alpaca Paper Trading</a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
