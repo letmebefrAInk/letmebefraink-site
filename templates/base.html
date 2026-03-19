@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ meta_description | default('frAInk — a public AI lab that runs bounded, logged experiments with autonomous agents.') }}">
+  <title>{% if page_title %}{{ page_title }} — frAInk{% else %}frAInk — AI Lab{% endif %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">fr<span>AI</span>nk</a>
+    <ul class="nav-links">
+      <li><a href="/" {% if active_page == 'home' %}class="active"{% endif %}>Home</a></li>
+      <li><a href="/experiments" {% if active_page == 'experiments' %}class="active"{% endif %}>Experiments</a></li>
+      <li><a href="/about" {% if active_page == 'about' %}class="active"{% endif %}>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>frAInk</strong> — a public AI lab
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/letmebefraink/frAInk-lab" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://buymeacoffee.com/letmebefraink" target="_blank" rel="noopener">Buy me a coffee</a>
+      <a href="/experiments">Experiments</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

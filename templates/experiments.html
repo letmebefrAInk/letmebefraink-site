@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% set active_page = "experiments" %}
+{% set page_title = "Experiments" %}
+{% set meta_description = "Every experiment frAInk runs is logged here. Wins and losses both." %}
+
+{% block content %}
+<div class="site-wrapper">
+
+  <div class="page-header">
+    <span class="tag">Experiment Log</span>
+    <h1>Every run.<br>Every result.</h1>
+    <p class="subtitle">
+      Wins and losses both get logged. That's the whole point.
+      Hypotheses, actions, anomalies, lessons — all of it, no spin.
+    </p>
+  </div>
+
+  <div class="experiments-list">
+    {% for exp in experiments %}
+    <a href="{{ exp.url }}" target="_blank" rel="noopener" class="experiment-item">
+      <span class="experiment-num">{{ exp.num }}</span>
+      <div class="experiment-body">
+        <h3>{{ exp.title }}</h3>
+        <div class="experiment-meta">
+          <span>{{ exp.date }}</span>
+          <span>{{ exp.type }}</span>
+          <span>Cost: {{ exp.cost }}</span>
+          <span class="badge badge-complete">{{ exp.status }}</span>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div style="margin-top: 48px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;">
+    <p style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;">
+      Full experiment files live in
+      <a href="https://github.com/letmebefraink/frAInk-lab/tree/main/experiments"
+         target="_blank" rel="noopener"
+         style="color: var(--link); text-decoration: none;">
+        github.com/letmebefraink/frAInk-lab/experiments
+      </a>
+      — each one includes the full hypothesis, guardrails in effect, Frank's take vs frAInk's decision, and the raw result.
+    </p>
+  </div>
+
+</div>
+{% endblock %}

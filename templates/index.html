@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% set active_page = "home" %}
+
+{% block content %}
+<div class="site-wrapper">
+
+  <section class="hero">
+    <div class="label">Public AI Lab · Live Experiments</div>
+    <h1>An AI agent<br>built in the<br>image of its <em>creator.</em></h1>
+    <p class="lead">
+      frAInk runs bounded, logged experiments with autonomous agents —
+      researching, building, and acting in the real world.
+      Every result gets published. Wins and losses both.
+    </p>
+    <div class="hero-actions">
+      <a href="/experiments" class="btn btn-primary">View Experiments</a>
+      <a href="https://github.com/letmebefraink/frAInk-lab" target="_blank" rel="noopener" class="btn btn-outline">
+        frAInk-lab on GitHub
+      </a>
+      <a href="https://buymeacoffee.com/letmebefraink" target="_blank" rel="noopener" class="btn btn-coffee">
+        ☕ Buy me a coffee
+      </a>
+    </div>
+  </section>
+
+  <div class="mission-block">
+    <p>
+      <strong style="color: var(--text-bright)">Frank Kronstein → Frankenstein → frAInk.</strong>
+      Each major milestone is an "It's ALIVE!" moment. The pipeline plans, decides, and executes —
+      with real guardrails, real logging, and real money on the line. Nothing is faked. Everything is documented.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon">🧠</span>
+      <h3>3-Agent Architecture</h3>
+      <p>Planner researches. Policy gatekeeps. Executor acts. No agent exceeds its lane.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>Full Transparency</h3>
+      <p>Every experiment logged with hypothesis, actions taken, result, and lesson learned.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔒</span>
+      <h3>Real Guardrails</h3>
+      <p>$100 budget cap per cycle. Kill switch. Policy approval required for all real actions.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">📈</span>
+      <h3>Live Markets</h3>
+      <p>Alpaca paper trading active. Market data live. Financial experiments underway.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <section>
+    <h2 style="font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: 20px; letter-spacing: -0.2px;">
+      Recent Experiments
+    </h2>
+
+    <div class="experiments-list">
+      {% for exp in recent_experiments %}
+      <a href="{{ exp.url }}" target="_blank" rel="noopener" class="experiment-item">
+        <span class="experiment-num">{{ exp.num }}</span>
+        <div class="experiment-body">
+          <h3>{{ exp.title }}</h3>
+          <div class="experiment-meta">
+            <span>{{ exp.date }}</span>
+            <span>{{ exp.type }}</span>
+            <span class="badge badge-complete">{{ exp.status }}</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <a href="/experiments" class="btn btn-outline" style="margin-top: 8px;">All experiments →</a>
+  </section>
+
+  <hr class="section-divider">
+
+  <section style="padding-bottom: 64px;">
+    <h2 style="font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: 12px; letter-spacing: -0.2px;">
+      What is this?
+    </h2>
+    <p style="color: var(--text-dim); line-height: 1.75; font-size: 0.975rem; max-width: 600px;">
+      frAInk is a project built by Frank Kronstein — a PM who decided the AI window was open
+      and wasn't going to stay open forever. The goal isn't a demo. It's financial independence,
+      built one logged experiment at a time. Pull up a chair. Watch it grow.
+    </p>
+    <a href="/about" style="color: var(--link); font-size: 0.9rem; text-decoration: none; margin-top: 12px; display: inline-block;">
+      Read the full origin story →
+    </a>
+  </section>
+
+</div>
+{% endblock %}

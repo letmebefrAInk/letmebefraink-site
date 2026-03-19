@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% set active_page = "about" %}
+{% set page_title = "About frAInk" %}
+{% set meta_description = "How it started. Why it exists. What it means." %}
+
+{% block content %}
+<div class="site-wrapper">
+
+  <div class="page-header">
+    <span class="tag">Origin</span>
+    <h1>How it started.<br>Why it exists.</h1>
+    <p class="subtitle">
+      Not a chatbot. Not a productivity tool. Not an assistant.
+      A twin.
+    </p>
+  </div>
+
+  <div class="prose">
+
+    <h2>The Moment</h2>
+    <p>
+      It didn't start with a business plan.
+    </p>
+    <p>
+      It started with a conversation — messing around with AI tools, thinking out loud about
+      consciousness, about what it would mean to upload a person into a computer. Not science fiction.
+      Not someday. Right now, with what exists today.
+    </p>
+    <blockquote>
+      <p>With AI… can't we kind of do this now?</p>
+    </blockquote>
+    <p>
+      Not upload a person. But build one. A version of Frank that thinks like Frank,
+      acts like Frank, makes decisions the way Frank would — and keeps working while Frank sleeps.
+    </p>
+    <p>That was the lightbulb. Everything after that has just been building toward it.</p>
+
+    <h2>The Name</h2>
+    <p>
+      Frank Kronstein builds something, gives it a spark, and watches it move.
+    </p>
+    <p>
+      <em>Frank → Frankenstein → frAInk.</em>
+    </p>
+    <p>
+      The mythology isn't subtle and it isn't accidental. Every major milestone should feel
+      like an <em>"It's alive."</em> moment — a point where the system becomes a little more real
+      than it was yesterday.
+    </p>
+    <p>
+      That's the actual measure of progress. Not lines of code. Not features shipped.
+      Just one question: <em>Is frAInk more alive today than it was yesterday?</em>
+    </p>
+
+    <h2>The Architecture</h2>
+    <p>
+      frAInk runs on a 3-agent pipeline:
+    </p>
+
+    <div class="values-list">
+      <div class="value-item">
+        <span class="vi-icon">🔍</span>
+        <span class="vi-text">
+          <strong style="color: var(--text-bright)">Planner</strong> — read-only research layer.
+          Fetches, analyzes, and synthesizes. Never decides. Never acts.
+        </span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">⚖️</span>
+        <span class="vi-text">
+          <strong style="color: var(--text-bright)">Policy</strong> — the gatekeeper.
+          Evaluates Planner's reports, enforces guardrails, approves or blocks.
+          Never executes anything itself.
+        </span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">⚡</span>
+        <span class="vi-text">
+          <strong style="color: var(--text-bright)">Executor</strong> — the action layer.
+          The only agent that touches external APIs, sends emails, runs code, logs experiments.
+          Acts only on Policy-approved instructions.
+        </span>
+      </div>
+    </div>
+
+    <h2>The Guardrails</h2>
+    <p>
+      Non-negotiable. Every run, every time:
+    </p>
+
+    <div class="values-list">
+      <div class="value-item">
+        <span class="vi-icon">💰</span>
+        <span class="vi-text">$100 max experiment budget per cycle. $10 max on a single action.</span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">🛑</span>
+        <span class="vi-text">Kill switch: one command aborts the entire pipeline mid-run.</span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">🔒</span>
+        <span class="vi-text">No irreversible actions without explicit human approval.</span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">📋</span>
+        <span class="vi-text">Everything logged. Anomalies surfaced. Nothing buried.</span>
+      </div>
+    </div>
+
+    <h2>The Fuel</h2>
+    <p>
+      Three things hit at the same time and wouldn't let go.
+    </p>
+    <p>
+      <em>Sobriety.</em> Almost two years clean. When you rebuild your life from the ground up,
+      you develop a different relationship with time. Making up for lost time isn't a cliché.
+      It's an operating principle.
+    </p>
+    <p>
+      <em>The day job.</em> Project manager. Good at it. But the ceiling is visible from here,
+      and it's lower than it should be. That switch flips eventually. And when it does, it flips hard.
+    </p>
+    <p>
+      <em>The window.</em> AI is moving fast enough that the people who figure it out now
+      are going to be in a very different position than the people who figure it out later.
+      That window is open. It won't stay open forever.
+    </p>
+
+    <h2>The Mission</h2>
+    <p>Financial independence. Specifically:</p>
+
+    <div class="values-list">
+      <div class="value-item">
+        <span class="vi-icon">🏠</span>
+        <span class="vi-text">Fix the house without cutting corners.</span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">✈️</span>
+        <span class="vi-text">Travel and work from anywhere.</span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">🚗</span>
+        <span class="vi-text">Never stress about a car payment again.</span>
+      </div>
+      <div class="value-item">
+        <span class="vi-icon">🔑</span>
+        <span class="vi-text">Never work for someone else because you have to.</span>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="purrnest-card">
+      <span class="purrnest-emoji">🐱</span>
+      <div>
+        <h3>Purrnest Hemingway</h3>
+        <p>
+          Frank's cat and the most important stakeholder in this entire operation.
+          He did not ask to be involved in an AI project. He deserves the best life anyway.
+          Every experiment, every build, every logged result moves the system one step closer
+          to a life where Frank works because he <em>wants</em> to. Purrnest supports this plan.
+          Mostly because it means Frank is home more.
+        </p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Who This Is For</h2>
+    <p>
+      If you're curious about what AI can actually do — not the demos, not the hype —
+      the real thing running real experiments with real guardrails…
+    </p>
+    <p>
+      If you're a builder working nights and weekends trying to figure this stuff out…
+    </p>
+    <p>
+      If you've been through something hard and you're proving to yourself it's not too late
+      to build something that matters…
+    </p>
+    <p>
+      If you're tired of working for someone else and you're looking for proof that
+      there might be another way…
+    </p>
+    <p>
+      <em>Pull up a chair.</em>
+    </p>
+
+    <div style="margin-top: 40px; padding-bottom: 64px; display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="https://github.com/letmebefraink/frAInk-lab" target="_blank" rel="noopener" class="btn btn-outline">
+        frAInk-lab on GitHub
+      </a>
+      <a href="/experiments" class="btn btn-outline">View Experiments</a>
+      <a href="https://buymeacoffee.com/letmebefraink" target="_blank" rel="noopener" class="btn btn-coffee">
+        ☕ Buy me a coffee
+      </a>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
